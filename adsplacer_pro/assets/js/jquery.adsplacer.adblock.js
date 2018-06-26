@@ -6,6 +6,7 @@ jQuery(document).ready(function($) {
 				var selector = jQuery("ins.adsbygoogle");
 				selector.prop('style', 'display:block!important;');
 				selector.html(adsplacerProAdblockMessage.message);
+				selector.removeClass('adsbygoogle');
 			}
 		}
 	}, adsplacerProAdblockAppearTime * 1000);
@@ -41,6 +42,7 @@ jQuery(document).ready(function($) {
 			{
 				selector.prop('style', 'display:block!important;');
 				selector.html(adsplacerProAdblockMessage.message);
+				selector.removeClass('adsbygoogle');
 			}
 			else {
 				if(selector2.length > 0 && selector2.html().replace(/\s/g, "").length == 0){
