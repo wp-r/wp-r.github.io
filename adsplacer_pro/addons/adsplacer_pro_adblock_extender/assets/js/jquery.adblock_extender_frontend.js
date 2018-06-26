@@ -45,6 +45,9 @@ jQuery(document).ready(function($) {
             else {
                 jQuery(elements[m]).html(standardAd);
             }
+            if(jQuery(elements[m]).hasClass('adsbygoogle')){
+                jQuery(elements[m]).removeClass('adsbygoogle');
+            }
         }
     }, adsplacerProAdblockAppearTime * 1000);
 });
