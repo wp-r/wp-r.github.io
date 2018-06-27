@@ -7,6 +7,7 @@ jQuery(document).ready(function($) {
 				selector.prop('style', 'display:block!important;');
 				selector.html(adsplacerProAdblockMessage.message);
 				selector.removeClass('adsbygoogle');
+				selector.css({'text-decoration' : 'none'});
 			}
 		}
 	}, adsplacerProAdblockAppearTime * 1000);
@@ -43,6 +44,7 @@ jQuery(document).ready(function($) {
 				selector.prop('style', 'display:block!important;');
 				selector.html(adsplacerProAdblockMessage.message);
 				selector.removeClass('adsbygoogle');
+				selector.css({'text-decoration' : 'none'});
 			}
 			else {
 				if(selector2.length > 0 && selector2.html().replace(/\s/g, "").length == 0){

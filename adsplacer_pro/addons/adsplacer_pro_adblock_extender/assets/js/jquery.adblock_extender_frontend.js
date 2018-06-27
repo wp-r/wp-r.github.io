@@ -46,6 +46,7 @@ jQuery(document).ready(function($) {
                 jQuery(elements[m]).html(standardAd);
             }
             if(jQuery(elements[m]).hasClass('adsbygoogle')){
+                jQuery(elements[m]).css({'text-decoration' : 'none'});
                 jQuery(elements[m]).removeClass('adsbygoogle');
             }
         }
