@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
     setTimeout(function() {
         var ad = document.querySelector("ins.adsbygoogle");
-        if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
+        if (ad && ad.innerHTML.replace(/\s/g, "").replace(/&nbsp;/g, "").length == 0) {
             var elements = jQuery("ins.adsbygoogle");
             elements.prop('style', 'display:block!important;');
         }
@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
         var ad2 = jQuery("div").filter(function() {
             return this.id.match(/(yandex_rtb_R-A|yandex_ad)/);
         });
-        if (ad2.length && ad2.html().replace(/\s/g, "").length == 0) {
+        if (ad2.length && ad2.html().replace(/\s/g, "").replace(/&nbsp;/g, "").length == 0) {
             var elements2 = jQuery("div").filter(function() {
                 return this.id.match(/(yandex_rtb_R-A|yandex_ad)/);
             });

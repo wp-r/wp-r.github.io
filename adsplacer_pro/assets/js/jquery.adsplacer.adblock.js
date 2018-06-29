@@ -38,7 +38,7 @@ jQuery(document).ready(function($) {
 				(
 					(selector.length == 1 && selector2.length == 0) ||
 					(selector.length == 1 && selector2.length == 1 && selector.position().top > selector2.position().top)
-				) && selector.html().replace(/\s/g, "").length == 0
+				) && selector.html().replace(/\s/g, "").replace(/&nbsp;/g, "").length == 0
 			)
 			{
 				selector.prop('style', 'display:block!important;');
@@ -47,7 +47,7 @@ jQuery(document).ready(function($) {
 				selector.css({'text-decoration' : 'none'});
 			}
 			else {
-				if(selector2.length > 0 && selector2.html().replace(/\s/g, "").length == 0){
+				if(selector2.length > 0 && selector2.html().replace(/\s/g, "").replace(/&nbsp;/g, "").length == 0){
 					selector2.prop('style', 'display:block!important;');
 					selector2.html(adsplacerProAdblockMessage.message);
 				}
