@@ -3,7 +3,7 @@ if(typeof AdsplacerProNeedToGetShortcodes === 'undefined'){
         return !!jQuery('noindex[data-shortcode]').length;
     }
 }
-if(typeof adsplacer_show_ads_ajax_timeout == 'undefined'){
+if(typeof adsplacer_show_ads_ajax_timeout == 'undefined' || !adsplacer_show_ads_ajax_timeout){
     jQuery(document).ready(function(){
         if(AdsplacerProNeedToGetShortcodes()){
             if(typeof adsplacerProPostId == 'undefined'){
@@ -19,7 +19,6 @@ if(typeof adsplacer_show_ads_ajax_timeout == 'undefined'){
                 type: 'POST',
                 dataType: 'json',
                 success: function (shortcodes) {
-                    console.log(shortcodes);
                     for (var number in shortcodes) {
                         if (!shortcodes.hasOwnProperty(number)) continue;
                         jQuery('noindex[data-shortcode=adsp-pro-' + number + ']').replaceWith(shortcodes[number]);
