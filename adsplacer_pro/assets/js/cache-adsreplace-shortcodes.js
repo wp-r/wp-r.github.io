@@ -6,15 +6,15 @@ if(typeof AdsplacerProNeedToGetShortcodes === 'undefined'){
 if(typeof adsplacer_show_ads_ajax_timeout == 'undefined' || !adsplacer_show_ads_ajax_timeout){
     jQuery(document).ready(function(){
         if(AdsplacerProNeedToGetShortcodes()){
-            if(typeof adsplacerProPostId == 'undefined'){
-                var adsplacerProPostId = 0;
+            if(typeof window.adsplacerProPostId == 'undefined'){
+                window.adsplacerProPostId = 0;
             }
             jQuery.ajax({
                 url: '/wp-admin/admin-ajax.php',
                 data: {
                     action: 'adsplacer_pro_get_ads_shortcode',
                     referrer: AdsplacerProReadCookie('adsplacerProReferrer'),
-                    id: adsplacerProPostId
+                    id: window.adsplacerProPostId
                 },
                 type: 'POST',
                 dataType: 'json',
@@ -32,15 +32,15 @@ else {
     setTimeout(function(){
         jQuery(document).ready(function(){
             if(AdsplacerProNeedToGetShortcodes()){
-                if(typeof adsplacerProPostId == 'undefined'){
-                    var adsplacerProPostId = 0;
+                if(typeof window.adsplacerProPostId == 'undefined'){
+                    window.adsplacerProPostId = 0;
                 }
                 jQuery.ajax({
                     url: '/wp-admin/admin-ajax.php',
                     data: {
                         action: 'adsplacer_pro_get_ads_shortcode',
                         referrer: AdsplacerProReadCookie('adsplacerProReferrer'),
-                        id: adsplacerProPostId
+                        id: window.adsplacerProPostId
                     },
                     type: 'POST',
                     dataType: 'json',
