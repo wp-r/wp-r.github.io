@@ -10,6 +10,16 @@ if(typeof AdsplacerProReadCookie === 'undefined') {
         return null;
     }
 }
+
+if(typeof AdsplacerProSetCookie === 'undefined') {
+    function AdsplacerProSetCookie(name, value) {
+        var date = new Date(),
+            expires = 'expires=';
+        date.setTime(date.setDate(date.getDate() + 30));
+        expires += date.toGMTString();
+        document.cookie = name + '=' + value + '; ' + expires + '; path=/';
+    }
+}
 jQuery(document).ready(function(){
     jQuery.ajax({
         url: '/wp-admin/admin-ajax.php',
@@ -35,6 +45,9 @@ jQuery(document).ready(function(){
                     }
                     else if(tagNumber == 'three_quads'){
                         jQuery('[data-tag="' + tag + '"][data-thirdquad=1]').replaceWith(insideContent[tag][tagNumber]);
+                    }
+                    else if(tagNumber == 'last'){
+                        jQuery('[data-tag="' + tag + '"][data-last=1]').replaceWith(insideContent[tag][tagNumber]);
                     }
                     else {
                         jQuery('[data-tag="' + tag + '"][data-number=' + tagNumber + ']').replaceWith(insideContent[tag][tagNumber]);

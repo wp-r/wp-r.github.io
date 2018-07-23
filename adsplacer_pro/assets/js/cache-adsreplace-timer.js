@@ -10,6 +10,15 @@ if(typeof AdsplacerProReadCookie === 'undefined') {
         return null;
     }
 }
+if(typeof AdsplacerProSetCookie === 'undefined') {
+    function AdsplacerProSetCookie(name, value) {
+        var date = new Date(),
+            expires = 'expires=';
+        date.setTime(date.setDate(date.getDate() + 30));
+        expires += date.toGMTString();
+        document.cookie = name + '=' + value + '; ' + expires + '; path=/';
+    }
+}
 setTimeout(function(){
     jQuery.ajax({
         url: '/wp-admin/admin-ajax.php',
@@ -36,6 +45,9 @@ setTimeout(function(){
                     else if(tagNumber == 'three_quads'){
                         jQuery('[data-tag="' + tag + '"][data-thirdquad=1]').replaceWith(insideContent[tag][tagNumber]);
                     }
+                    else if(tagNumber == 'last'){
+                        jQuery('[data-tag="' + tag + '"][data-last=1]').replaceWith(insideContent[tag][tagNumber]);
+                    }
                     else {
                         jQuery('[data-tag="' + tag + '"][data-number=' + tagNumber + ']').replaceWith(insideContent[tag][tagNumber]);
                     }
@@ -56,14 +68,16 @@ setTimeout(function(){
         dataType: 'json'
     });
 }, adsplacer_show_ads_ajax_timeout);
-jQuery(document).ready(function(){
-    jQuery(window).scroll(function(){
-        if (window.adsplacerScrollTimeout) clearTimeout(window.adsplacerScrollTimeout);
-        window.adsplacerScrollTimeout = setTimeout(function(){
-            var ads = jQuery('.adsplaser_pro_abtest');
-            for(var i = 0; i < ads.length; i++){
-                adsplacerViewAd(ads[i]);
-            }
-        }, 500);
+setTimeout(function(){
+    jQuery(document).ready(function(){
+        jQuery(window).scroll(function(){
+            if (window.adsplacerScrollTimeout) clearTimeout(window.adsplacerScrollTimeout);
+            window.adsplacerScrollTimeout = setTimeout(function(){
+                var ads = jQuery('.adsplaser_pro_abtest');
+                for(var i = 0; i < ads.length; i++){
+                    adsplacerViewAd(ads[i]);
+                }
+            }, 500);
+        });
     });
-});
+}, adsplacer_show_ads_ajax_timeout);

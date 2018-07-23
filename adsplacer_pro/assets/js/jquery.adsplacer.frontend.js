@@ -8,6 +8,14 @@ function AdsplacerProReadCookie(name) {
     }
     return null;
 }
+
+function AdsplacerProSetCookie(name, value) {
+    var date = new Date(),
+        expires = 'expires=';
+    date.setTime(date.setDate(date.getDate() + 30));
+    expires += date.toGMTString();
+    document.cookie = name + '=' + value + '; ' + expires + '; path=/';
+}
 function getABTestContainer(el)
 {
     if(el.parent().length === 0){
