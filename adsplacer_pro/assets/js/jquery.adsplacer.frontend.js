@@ -82,7 +82,8 @@ function adsplacerTrackIframeClick()
 {
     jQuery('.adsplaser_pro_abtest iframe').iframeTracker({
         blurCallback: function(){
-            var container = getABTestContainer(jQuery(this.target));
+            //var container = getABTestContainer(jQuery(this.target));
+            var container = this._container;
             var ad_id = container.data('id');
             var template_id = container.data('template');
             var tag = container.data('tag');
@@ -98,7 +99,14 @@ function adsplacerTrackIframeClick()
                 },
                 type: 'POST'
             });
-        }
+        },
+        overCallback: function(element, event) {
+            this._container = $(element).parents('.adsplaser_pro_abtest');
+        },
+        outCallback: function(element, event) {
+            this._container = null;
+        },
+        _container: null
     });
 }
 
