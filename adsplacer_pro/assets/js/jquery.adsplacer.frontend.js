@@ -61,6 +61,7 @@ function adsplacerViewAd(el){
         var template_id = container.data('template');
         var tag = container.data('tag');
         var p_number = container.data('p-number');
+        var shortcode = container.data('shortcode');
         jQuery.ajax({
             url: '/wp-admin/admin-ajax.php',
             data: {
@@ -69,6 +70,7 @@ function adsplacerViewAd(el){
                     ad_id: ad_id,
                     template_id: template_id,
                     tag: tag,
+                    shortcode: shortcode,
                     p_number: p_number
                 }
             },
@@ -78,9 +80,15 @@ function adsplacerViewAd(el){
 }
 
 
-function adsplacerTrackIframeClick()
+function adsplacerTrackIframeClick(shortcodes)
 {
-    jQuery('.adsplaser_pro_abtest iframe').iframeTracker({
+    if(typeof shortcodes !== 'undefined' && shortcodes){
+        shortcodes = '[data-shortcode]';
+    }
+    else {
+        shortcodes = '';
+    }
+    jQuery('.adsplaser_pro_abtest' + shortcodes + ' iframe').iframeTracker({
         blurCallback: function(){
             //var container = getABTestContainer(jQuery(this.target));
             var container = this._container;
@@ -88,6 +96,7 @@ function adsplacerTrackIframeClick()
             var template_id = container.data('template');
             var tag = container.data('tag');
             var p_number = container.data('p-number');
+            var shortcode = container.data('shortcode');
             jQuery.ajax({
                 url: '/wp-admin/admin-ajax.php',
                 data: {
@@ -95,6 +104,7 @@ function adsplacerTrackIframeClick()
                     ad_id: ad_id,
                     template_id: template_id,
                     tag: tag,
+                    shortcode: shortcode,
                     p_number: p_number
                 },
                 type: 'POST'
@@ -110,14 +120,21 @@ function adsplacerTrackIframeClick()
     });
 }
 
-function adsplacerTrackAdClick()
+function adsplacerTrackAdClick(shortcodes)
 {
-    jQuery('.adsplaser_pro_abtest').on('click', function(){
+    if(typeof shortcodes !== 'undefined' && shortcodes){
+        shortcodes = '[data-shortcode]';
+    }
+    else {
+        shortcodes = '';
+    }
+    jQuery('.adsplaser_pro_abtest' + shortcodes).on('click', function(){
         var container = jQuery(this);
         var ad_id = container.data('id');
         var template_id = container.data('template');
         var tag = container.data('tag');
         var p_number = container.data('p-number');
+        var shortcode = container.data('shortcode');
         jQuery.ajax({
             url: '/wp-admin/admin-ajax.php',
             data: {
@@ -125,6 +142,7 @@ function adsplacerTrackAdClick()
                 ad_id: ad_id,
                 template_id: template_id,
                 tag: tag,
+                shortcode: shortcode,
                 p_number: p_number
             },
             type: 'POST'

@@ -314,6 +314,7 @@ jQuery(document).ready(function($) {
 					customNumberSelect(e, this);
 				});
 				jQuery('#taxonomy').chosen();
+				jQuery('#post_tag').chosen();
 				jQuery('#template').chosen();
 				//jQuery('.new-timing [name=timing_work_till]').datepicker({'dateFormat' : 'yy-mm-dd'});
 				var dateFormat = "yy-mm-dd",
@@ -469,6 +470,7 @@ jQuery(document).ready(function($) {
 		sendData.tag.h3 = $('[name="tag-h3[]"]').val();
 		sendData.tag.img = $('[name="tag-img[]"]').val();
 		sendData.taxonomy = $('[name="taxonomies[]"]').val();
+		sendData.post_tag = $('[name="post_tags[]"]').val();
 		sendData.content = $('#contentValue').val();
 		sendData.template = $('[name="template"]').val();
 		sendData.description = $('[name=description]').val();
@@ -675,6 +677,7 @@ jQuery(document).ready(function($) {
 		var paragraph 			= $('#edit-paragraph');
 		var tag 				= $('#edit-tag');
 		var taxonomy 			= $('#edit-taxonomy');
+		var post_tag 			= $('#edit-post_tag');
 		var timing_enabled 		= $('.edit-timing [name=timing_enabled]');
 
 		openModal(modalID);
@@ -757,6 +760,7 @@ jQuery(document).ready(function($) {
 					}
 				}
 				taxonomy.val(data.success.taxonomy);
+				post_tag.val(data.success.post_tag);
 				jQuery('.edit-timing .stop_hours').addClass('red').removeClass('green');
 				for(var v = 0; v < data.success.timing.length; v++){
 					var b = data.success.timing[v];
@@ -819,6 +823,8 @@ jQuery(document).ready(function($) {
 					});
 					jQuery('#edit-taxonomy').chosen();
 					jQuery('#edit-taxonomy').trigger('chosen:updated');
+					jQuery('#edit-post_tag').chosen();
+					jQuery('#edit-post_tag').trigger('chosen:updated');
 					jQuery('#edit-template').chosen();
 					jQuery('#edit-template').trigger('chosen:updated');
 
@@ -961,6 +967,7 @@ jQuery(document).ready(function($) {
 		sendData.tag.h3 = $('#edit-tag-h3').val();
 		sendData.tag.img = $('#edit-tag-img').val();
 		sendData.taxonomy = $('#edit-taxonomy').val();
+		sendData.post_tag = $('#edit-post_tag').val();
 		if($('.edit-timing [name=timing_enable_work_till]:checked').length){
 			sendData.timing_enable_work_till = true;
 			sendData.timing_from = $('.edit-timing [name=timing_work_from]').val();
@@ -1079,6 +1086,9 @@ function populateStatistic(id)
 			}
 			else if(adsplacerStatistic[id][i].ad.location == 3){
 				content += '<td>После контента</td>';
+			}
+			else if(adsplacerStatistic[id][i].ad.location > 1000 && adsplacerStatistic[id][i].ad.location < 2000){
+				content += '<td>[adsp-pro-' + adsplacerStatistic[id][i].ad.location + ']</td>';
 			}
 			content += '<td class="tac">' + adsplacerStatistic[id][i].row.views + '</td>';
 			content += '<td class="tac">' + adsplacerStatistic[id][i].row.clicks + '</td>';
