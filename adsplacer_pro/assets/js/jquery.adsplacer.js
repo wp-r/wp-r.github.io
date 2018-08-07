@@ -1088,7 +1088,7 @@ function populateStatistic(id)
 				content += '<td>После контента</td>';
 			}
 			else if(adsplacerStatistic[id][i].ad.location > 1000 && adsplacerStatistic[id][i].ad.location < 2000){
-				content += '<td>[adsp-pro-' + adsplacerStatistic[id][i].ad.location + ']</td>';
+				content += '<td>[adsp-pro-' + (adsplacerStatistic[id][i].ad.location - 1000) + ']</td>';
 			}
 			content += '<td class="tac">' + adsplacerStatistic[id][i].row.views + '</td>';
 			content += '<td class="tac">' + adsplacerStatistic[id][i].row.clicks + '</td>';
