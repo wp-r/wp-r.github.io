@@ -1,6 +1,6 @@
 if(typeof AdsplacerProNeedToGetShortcodes === 'undefined'){
     function AdsplacerProNeedToGetShortcodes() {
-        return !!$('html').html().match( /<sc>[a-z0-9-]*<\/sc>/g );
+        return !!jQuery('html').html().match( /<sc>[a-z0-9-]*<\/sc>/g );
         // return !!jQuery('noindex[data-shortcode]').length;
     }
 }
