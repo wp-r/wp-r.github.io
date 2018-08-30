@@ -1,7 +1,11 @@
 if(typeof AdsplacerProNeedToGetShortcodes === 'undefined'){
     function AdsplacerProNeedToGetShortcodes() {
-        return !!jQuery('html').html().match( /<sc>[a-z0-9-]*<\/sc>/g );
-        // return !!jQuery('noindex[data-shortcode]').length;
+        if(AdsplacerProVersionCompare(adsplacerProVersion, '2.8.0') >= 0){
+            return !!jQuery('html').html().match( /<sc>[a-z0-9-]*<\/sc>/g );
+        }
+        else {
+            return !!jQuery('noindex[data-shortcode]').length;
+        }
     }
 }
 if(typeof AdsplacerProFindComments === 'undefined'){
