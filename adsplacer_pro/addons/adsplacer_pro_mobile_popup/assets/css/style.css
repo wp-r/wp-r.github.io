@@ -9,6 +9,7 @@
 	z-index: 9999999;
 	background-color: #fff;
 	color: #000;
+	left: 0;
 }
 #adsplacer_pro_mobile_popup_centered {
 	width: 100%;
@@ -18,10 +19,10 @@
 }
 #adsplacer_pro_mobile_popup_close_button {
 	position: absolute;
-	top: -35px;
+	top: -40px;
 	right: 25px;
-	background: url(../images/close.png) 10px 10px no-repeat;
-	background-size: 30px;
-	width: 50px;
-	height: 50px;
+	background: url(../images/close.png) center center no-repeat;
+	width: 30px;
+	height: 30px;
+	z-index: 10;
 }

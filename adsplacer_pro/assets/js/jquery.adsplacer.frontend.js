@@ -9,10 +9,13 @@ function AdsplacerProReadCookie(name) {
     return null;
 }
 
-function AdsplacerProSetCookie(name, value) {
+function AdsplacerProSetCookie(name, value, time) {
+    if(typeof time === 'undefined'){
+        time = 30;
+    }
     var date = new Date(),
         expires = 'expires=';
-    date.setTime(date.setDate(date.getDate() + 30));
+    date.setTime(date.setDate(date.getDate() + time));
     expires += date.toGMTString();
     document.cookie = name + '=' + value + '; ' + expires + '; path=/';
 }
