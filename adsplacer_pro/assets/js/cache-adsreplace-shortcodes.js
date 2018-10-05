@@ -70,44 +70,49 @@ if(typeof AdsplacerProVersionCompare === 'undefined'){
         return 0;
     }
 }
+if(typeof AdsplacerProInsertAdsToShortcodes === 'undefined'){
+    function AdsplacerProInsertAdsToShortcodes(postId){
+        jQuery.ajax({
+            url: '/wp-admin/admin-ajax.php',
+            data: {
+                action: 'adsplacer_pro_get_ads_shortcode',
+                referrer: AdsplacerProReadCookie('adsplacerProReferrer'),
+                id: postId
+            },
+            type: 'POST',
+            dataType: 'json',
+            success: function (shortcodes) {
+                var commentNodes = AdsplacerProFindComments(document);
+                for (var number in shortcodes) {
+                    if (!shortcodes.hasOwnProperty(number)) continue;
+                    if(AdsplacerProVersionCompare(adsplacerProVersion, '2.8.0') >= 0){
+                        commentNodes.forEach(function(node){
+                            if(node.nodeValue === '<sc>adsp-pro-' + number + '</sc>'){
+                                jQuery(node).replaceWith(shortcodes[number]);
+                            }
+                        });
+                    }
+                    else {
+                        jQuery('noindex[data-shortcode=adsp-pro-' + number + ']').replaceWith(shortcodes[number]);
+                    }
+                }
+                adsplacerTrackIframeClick(true);
+                adsplacerTrackAdClick(true);
+                var ads = jQuery('.adsplaser_pro_abtest[data-shortcode]');
+                for(var i = 0; i < ads.length; i++){
+                    adsplacerViewAd(ads[i]);
+                }
+            }
+        });
+    }
+}
 if(typeof adsplacer_show_ads_ajax_timeout == 'undefined' || !adsplacer_show_ads_ajax_timeout){
     jQuery(document).ready(function(){
         if(AdsplacerProNeedToGetShortcodes()){
             if(typeof window.adsplacerProPostId == 'undefined'){
                 window.adsplacerProPostId = 0;
             }
-            jQuery.ajax({
-                url: '/wp-admin/admin-ajax.php',
-                data: {
-                    action: 'adsplacer_pro_get_ads_shortcode',
-                    referrer: AdsplacerProReadCookie('adsplacerProReferrer'),
-                    id: window.adsplacerProPostId
-                },
-                type: 'POST',
-                dataType: 'json',
-                success: function (shortcodes) {
-                    var commentNodes = AdsplacerProFindComments(document);
-                    for (var number in shortcodes) {
-                        if (!shortcodes.hasOwnProperty(number)) continue;
-                        if(AdsplacerProVersionCompare(adsplacerProVersion, '2.8.0') >= 0){
-                            commentNodes.forEach(function(node){
-                                if(node.nodeValue === '<sc>adsp-pro-' + number + '</sc>'){
-                                    jQuery(node).replaceWith(shortcodes[number]);
-                                }
-                            });
-                        }
-                        else {
-                            jQuery('noindex[data-shortcode=adsp-pro-' + number + ']').replaceWith(shortcodes[number]);
-                        }
-                    }
-                    adsplacerTrackIframeClick(true);
-                    adsplacerTrackAdClick(true);
-                    var ads = jQuery('.adsplaser_pro_abtest[data-shortcode]');
-                    for(var i = 0; i < ads.length; i++){
-                        adsplacerViewAd(ads[i]);
-                    }
-                }
-            });
+            AdsplacerProInsertAdsToShortcodes(window.adsplacerProPostId);
         }
     });
 }
@@ -118,38 +123,7 @@ else {
                 if(typeof window.adsplacerProPostId == 'undefined'){
                     window.adsplacerProPostId = 0;
                 }
-                jQuery.ajax({
-                    url: '/wp-admin/admin-ajax.php',
-                    data: {
-                        action: 'adsplacer_pro_get_ads_shortcode',
-                        referrer: AdsplacerProReadCookie('adsplacerProReferrer'),
-                        id: window.adsplacerProPostId
-                    },
-                    type: 'POST',
-                    dataType: 'json',
-                    success: function (shortcodes) {
-                        var commentNodes = AdsplacerProFindComments(document);
-                        for (var number in shortcodes) {
-                            if (!shortcodes.hasOwnProperty(number)) continue;
-                            if(AdsplacerProVersionCompare(adsplacerProVersion, '2.8.0') >= 0) {
-                                commentNodes.forEach(function (node) {
-                                    if (node.nodeValue === '<sc>adsp-pro-' + number + '</sc>') {
-                                        jQuery(node).replaceWith(shortcodes[number]);
-                                    }
-                                });
-                            }
-                            else {
-                                jQuery('noindex[data-shortcode=adsp-pro-' + number + ']').replaceWith(shortcodes[number]);
-                            }
-                        }
-                        adsplacerTrackIframeClick(true);
-                        adsplacerTrackAdClick(true);
-                        var ads = jQuery('.adsplaser_pro_abtest[data-shortcode]');
-                        for(var i = 0; i < ads.length; i++){
-                            adsplacerViewAd(ads[i]);
-                        }
-                    }
-                });
+                AdsplacerProInsertAdsToShortcodes(window.adsplacerProPostId);
             }
         });
     }, adsplacer_show_ads_ajax_timeout);
