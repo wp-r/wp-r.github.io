@@ -1,9 +1,9 @@
 jQuery(document).ready(function($) {
 	setTimeout(function() {
-		var ad = document.querySelector("ins.adsbygoogle");
+		var ad = document.querySelector("ins[data-ad-client]");
 		if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
 			if(!adsplacerProAdblockFirstOnly){
-				var selector = jQuery("ins.adsbygoogle");
+				var selector = jQuery("ins[data-ad-client]");
 				selector.prop('style', 'display:block!important;');
 				selector.html(adsplacerProAdblockMessage.message);
 				selector.removeClass('adsbygoogle');
@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 
 	setTimeout(function(){
 		if(adsplacerProAdblockFirstOnly){
-			var selector = jQuery("ins.adsbygoogle").first();
+			var selector = jQuery("ins[data-ad-client]").first();
 			var selector2 = jQuery("div").filter(function() {
 				return this.id.match(/(yandex_rtb_R-A|yandex_ad)/);
 			}).first();
