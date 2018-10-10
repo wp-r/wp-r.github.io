@@ -1,8 +1,8 @@
 jQuery(document).ready(function($) {
     setTimeout(function() {
-        var ad = document.querySelector("ins.adsbygoogle");
+        var ad = document.querySelector("ins[data-ad-client]");
         if (ad && ad.innerHTML.replace(/\s/g, "").replace(/&nbsp;/g, "").length == 0) {
-            var elements = jQuery("ins.adsbygoogle");
+            var elements = jQuery("ins[data-ad-client]");
             elements.prop('style', 'display:block!important;');
         }
 
