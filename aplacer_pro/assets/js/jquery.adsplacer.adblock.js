@@ -1,4 +1,6 @@
+console.log('asda');
 jQuery(document).ready(function($) {
+	console.log('asda1');
 	setTimeout(function() {
 		var ad = document.querySelector("ins[data-ad-client]");
 		if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
@@ -10,6 +12,7 @@ jQuery(document).ready(function($) {
 				selector.css({'text-decoration' : 'none'});
 			}
 		}
+		console.log('asda2');
 	}, adsplacerProAdblockAppearTime * 1000);
 
 
@@ -22,10 +25,11 @@ jQuery(document).ready(function($) {
 				var selector = jQuery("div").filter(function() {
 					return this.id.match(/(yandex_rtb_R-A|yandex_ad)/);
 				});
-				selector.prop('style', 'display:block!important;');
+				selector.prop('style', 'display:block!important;visibility:visible!important;');
 				selector.html(adsplacerProAdblockMessage.message);
 			}
 		}
+		console.log('asda3');
 	}, adsplacerProAdblockAppearTime * 1000);
 
 	setTimeout(function(){
@@ -53,5 +57,6 @@ jQuery(document).ready(function($) {
 				}
 			}
 		}
+		console.log('asda4');
 	}, adsplacerProAdblockAppearTime * 1000);
 });
