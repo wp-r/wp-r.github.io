@@ -17,9 +17,6 @@ jQuery(document).ready(function($) {
 		var ad = jQuery("div").filter(function() {
 			return this.id.match(/(yandex_rtb_R-A|yandex_ad)/);
 		});
-		console.log(ad.length && ad.html().replace(/\s/g, "").length == 0);
-		console.log(!adsplacerProAdblockFirstOnly);
-		console.log(adsplacerProAdblockMessage.message);
 		if (ad.length && ad.html().replace(/\s/g, "").length == 0) {
 			if(!adsplacerProAdblockFirstOnly){
 				var selector = jQuery("div").filter(function() {
