@@ -1,18 +1,15 @@
-console.log('asda');
 jQuery(document).ready(function($) {
-	console.log('asda1');
 	setTimeout(function() {
 		var ad = document.querySelector("ins[data-ad-client]");
 		if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) {
 			if(!adsplacerProAdblockFirstOnly){
 				var selector = jQuery("ins[data-ad-client]");
-				selector.prop('style', 'display:block!important;');
+				selector.prop('style', 'display:block!important;visibility:visible!important;');
 				selector.html(adsplacerProAdblockMessage.message);
 				selector.removeClass('adsbygoogle');
 				selector.css({'text-decoration' : 'none'});
 			}
 		}
-		console.log('asda2');
 	}, adsplacerProAdblockAppearTime * 1000);
 
 
@@ -20,6 +17,9 @@ jQuery(document).ready(function($) {
 		var ad = jQuery("div").filter(function() {
 			return this.id.match(/(yandex_rtb_R-A|yandex_ad)/);
 		});
+		console.log(ad.length && ad.html().replace(/\s/g, "").length == 0);
+		console.log(!adsplacerProAdblockFirstOnly);
+		console.log(adsplacerProAdblockMessage.message);
 		if (ad.length && ad.html().replace(/\s/g, "").length == 0) {
 			if(!adsplacerProAdblockFirstOnly){
 				var selector = jQuery("div").filter(function() {
@@ -29,7 +29,6 @@ jQuery(document).ready(function($) {
 				selector.html(adsplacerProAdblockMessage.message);
 			}
 		}
-		console.log('asda3');
 	}, adsplacerProAdblockAppearTime * 1000);
 
 	setTimeout(function(){
@@ -45,18 +44,17 @@ jQuery(document).ready(function($) {
 				) && selector.html().replace(/\s/g, "").replace(/&nbsp;/g, "").length == 0
 			)
 			{
-				selector.prop('style', 'display:block!important;');
+				selector.prop('style', 'display:block!important;visibility:visible!important;');
 				selector.html(adsplacerProAdblockMessage.message);
 				selector.removeClass('adsbygoogle');
 				selector.css({'text-decoration' : 'none'});
 			}
 			else {
 				if(selector2.length > 0 && selector2.html().replace(/\s/g, "").replace(/&nbsp;/g, "").length == 0){
-					selector2.prop('style', 'display:block!important;');
+					selector2.prop('style', 'display:block!important;visibility:visible!important;');
 					selector2.html(adsplacerProAdblockMessage.message);
 				}
 			}
 		}
-		console.log('asda4');
 	}, adsplacerProAdblockAppearTime * 1000);
 });
