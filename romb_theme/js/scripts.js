@@ -1,1 +1,1 @@
-//code goes here
+function showPopUpRomb(id) {jQuery(id).show(0);}function hidePopUpRomb(id) {jQuery(id).hide(0);}
