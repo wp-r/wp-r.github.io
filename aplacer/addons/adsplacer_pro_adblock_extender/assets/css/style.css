@@ -1,0 +1,27 @@
+#adsplacer_pro-extra-ads-list .dragger {
+    cursor: move;
+}
+#adsplacer_pro-extra-ads-list {
+    border-collapse: collapse;
+}
+#adsplacer_pro-extra-ads-list .ui-sortable-helper {
+    border: 4px dashed #999;
+}
+tr td.order, th.order {
+    width: 125px;
+}
+tr td.dragger, th.dragger {
+    width: 140px;
+}
+tr td.description, th.description {
+
+}
+tr td.content, th.content {
+
+}
+.border-green {
+    border: 2px solid green;
+    font-size: 16px;
+    display: inline-block;
+    padding: 5px;
+}
