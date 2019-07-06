@@ -91,6 +91,9 @@ function adsplacerTrackIframeClick(shortcodes)
     else {
         shortcodes = '';
     }
+    if(typeof jQuery.iframeTracker === 'undefined'){
+        return;
+    }
     jQuery('.adsplaser_pro_abtest' + shortcodes + ' iframe').iframeTracker({
         blurCallback: function(){
             var container = this._container;
