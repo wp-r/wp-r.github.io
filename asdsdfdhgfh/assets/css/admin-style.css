@@ -1,0 +1,448 @@
+#adsplacer_settings_tabs {
+    overflow: hidden;
+    background: none;
+    border: none;
+}
+
+#adsplacer_settings_tabs ul {
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0;
+    padding-left: 10px;
+    border-radius: 0;
+    background: none;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+#adsplacer_settings_tabs ul li {
+    float: left;
+    overflow: hidden;
+    margin: 0 5px 0 0;
+    background: #f1f1f1;
+    border: 1px solid transparent;
+    border-bottom: none;
+}
+
+#adsplacer_settings_tabs ul li a {
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    color: #555;
+    display: block;
+    padding: 10px 20px;
+}
+
+@media ( max-width: 370px ) {
+    #adsplacer_settings_tabs ul li a {
+        padding: 10px 14px;
+    }
+}
+
+.custom-ads-tabs {
+    padding: 50px 0 0 0;
+}
+
+#adsplacer_settings_tabs .custom-ads-tabs > ul > li a {
+    font-size: 13px;
+    padding: 6px 10px;
+}
+
+#adsplacer_settings_tabs ul li.ui-state-active {
+    background: #e4e4e4;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 0;
+}
+
+#adsplacer_settings_tabs ul li.ui-state-active a {
+    color: #000;
+}
+
+.adsplacer-tabs {
+    padding: 0 20px;
+}
+
+@media ( min-width: 1100px ) {
+
+    .tab-area {
+        width: 30%;
+        float: left;
+        margin: 0 3% 0 0;
+    }
+
+    .tab-area:last-child {
+        margin: 0;
+    }
+
+}
+
+.custom-ads-tab-area {
+    width: 100%;
+    max-width: 700px;
+}
+
+li#toplevel_page_adsplacer_pro div.wp-menu-image:before {
+    content: "\f155";
+    font-family: 'FontAwesome' !important;
+    font-size: 18px !important;
+}
+.autor_plugin {
+    margin-top: 50px;
+}
+.autor_plugin > div {
+    background: #fff none repeat scroll 0 0;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 5px;
+    width: 200px;
+}
+.autor_plugin img {
+    float: left;
+    margin: 5px 10px 5px 5px;
+}
+.wrap.instruction > ul {
+    margin-left: 15px;
+}
+.wrap.instruction li {
+    list-style: inside none disc;
+}
+.adsplacer_settings_promo_link {
+    font-size: 18px;
+}
+
+
+
+
+a#addShortcodeModalButton:link, a#addShortcodeModalButton:visited, button.adsplacerProButton {
+    background: #2ea2cc;
+    color: #fff;
+    margin: 17px 0;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: none;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    text-shadow: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    width: 200px;
+    -webkit-transition-property: background;
+    transition-property: background;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+.red.adsplacerProButton {
+    background: #ff4c4d;
+}
+
+a#addShortcodeModalButton:hover, a#addShortcodeModalButton:active {
+    background: #0074a2;
+}
+
+.adsplacer-pro-modal {
+    background-color: #fff;
+    display: none;
+    float: left;
+    position: absolute;
+    z-index: 99999;
+    -webkit-box-shadow: 0px 0px 20px #000;
+    -moz-box-shadow: 0px 0px 20px #000;
+    box-shadow: 0px 0px 20px #000;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+}
+
+.adsplacer-pro-modal-content {
+    width: 540px;
+    overflow: hidden;
+}
+
+.adsplacer-pro-modal-content.wide {
+    width: 640px;
+}
+
+.adsplacer-pro-modal-header {
+    overflow: hidden;
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.adsplacer-pro-modal-header h4 {
+    margin: 5px 0;
+    font-size: 16px;
+    float: left;
+}
+
+.adsplacer-pro-modal-close-button {
+    float: right;
+    display: block;
+    margin: 5px 0;
+    padding: 0 5px;
+    font-size: 18px
+}
+
+.adsplacer-pro-modal-body {
+    overflow: hidden;
+    padding: 20px;
+}
+
+.form-row {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.form-group-6 {
+    overflow: hidden;
+    width: 177px;
+}
+
+.form-group-6:first-child {
+    float: left;
+    margin: 0 3px 0 0;
+}
+
+.form-group-6:last-child {
+    float: right;
+    margin: 0 0 0 3px;
+}
+
+.form-group, .form-group-6 {
+    margin-bottom: 10px;
+}
+
+.form-group label, .form-group-6 label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group .form-control, .form-group-6 .form-control {
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-group .form-control {
+    width: 100%;
+}
+
+.form-group-6 .form-control {
+    width: 175px;
+}
+
+.form-group textarea.form-control {
+    height: auto;
+    resize: vertical;
+}
+textarea.note {
+    max-width: 500px;
+}
+
+.adsplacer-pro-modal-footer {
+    overflow: hidden;
+    padding: 20px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+
+#viewShortcodeProgressContainer {
+    text-align: center;
+}
+
+.progress-icon {
+    font-size: 20px;
+    margin: 4px 10px 0 0;
+}
+
+.view-progress-icon {
+    font-size: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+p.error {
+    color: #a94442;
+    text-align: center;
+    overflow: hidden;
+    margin: 0;
+}
+
+p.success {
+    color: #3c763d;
+    text-align: center;
+    overflow: hidden;
+    margin: 0;
+}
+
+#fade {
+    display: none;
+    background: #000;
+    position: fixed; left: 0; top: 0;
+    width: 100%; height: 100%;
+    opacity: .80;
+    z-index: 9999;
+}
+
+.scode-shortcodes-list  div.row-title {
+
+}
+.autor_plugin {
+    margin-top: 50px;
+}
+.autor_plugin > div {
+    background: #fff none repeat scroll 0 0;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 5px;
+    width: 200px;
+}
+.autor_plugin img {
+    float: left;
+    margin: 5px 10px 5px 5px;
+}
+.adsplacer-pro-modal-content .spoiler-header {
+    color:#0085BA;
+    border-bottom: 1px dotted #0085BA;
+}
+.adsplacer-pro-modal-content .tags-targeting {
+    padding-left: 10px;
+    margin-bottom: 2px;
+    margin-top: 5px;
+}
+.chosen-container .chosen-results {
+    max-height: 165px;
+}
+.clickable {
+    cursor: pointer;
+}
+
+.custom_paragraphs {
+    margin-top: 10px;
+}
+.custom_paragraphs input {
+    width: 40px;
+}
+.custom_paragraphs button {
+    margin-left: 10px!important;
+}
+div#wp-adsplacer_pro_adblocker_code-wrap {
+    max-width: 800px;
+}
+/* <--timetable */
+.timetable {
+    position: relative;
+}
+.timetable .sheet {
+    border-collapse: collapse;
+    margin: 13px 0 20px;
+}
+.timetable .sheet td,
+.timetable .sheet th {
+    background: #f4f4f4;
+    width: 22px;
+    height: 21px;
+    border: 1px solid #fff;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.92em;
+}
+.timetable .sheet tbody td {
+    cursor: pointer;
+}
+.timetable .sheet td.red {
+    background-color: #f77575;
+}
+.timetable .sheet td.green {
+    background-color: #d2e3a8;
+}
+.timetable .timetable-overlay, .adsplacer-block-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.65);
+    z-index: 9;
+}
+form.timetable div label {
+    min-width: 25px;
+}
+.edit-timing input[type=checkbox], .new-timing input[type=checkbox] {
+    margin: -6px 8px 0 0;
+}
+.new-timing, .edit-timing {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+/* timetable--> */
+
+/* addon promo*/
+.ads_addon {width: 100%; max-width: 600px;}
+.ads_addon p {margin: 20px 0;}
+.ads_addon img {display: block; margin: 15px auto; text-align: center;}
+.ads_addon a.ads_addon_sale {background: #FF4301; padding: 10px 0; color: #fff; font-size: 15px; display: block; text-decoration: none;text-align: center; width: 258px;line-height: 17px;margin: 10px 0;box-shadow: 0 1px 1px 1px #DADADA;cursor: pointer;}
+.ads_addon a.ads_addon_video {background: url(../images/you.png) no-repeat 8px center #e5e5e5; padding: 5px 10px 5px 40px;text-decoration: none;color: #32373c;border: 1px solid #b4b9be;}
+.ads_addon a.ads_addon_sale:hover, .ads_addon input[type='submit']:hover {background: #0073AA;}
+.ads_addon ul {margin: 0 0 0 15px;}
+.ads_addon ul li {list-style: disc outside;}
+.ads_addon form {margin: 20px 0 0;}
+.ads_addon form label {line-height: 17px;font-weight: bold;vertical-align: baseline; display: block;}
+.ads_addon form input[type='text'] {line-height: 17px;padding: 10px 7px;display: inline-block;width: 126px;}
+.ads_addon form input[type='submit'] {background: #6CA62E;padding: 10px; color: #fff; font-size: 15px; display: inline-block; text-align: center; line-height: 17px;margin: 10px 0;box-shadow: 0 1px 1px 1px #DADADA; border: none; cursor: pointer;}
+#adsplacer_pro_licence_form div label {font-weight: bold;margin: 0 0 10px;line-height: 27px;vertical-align: baseline;}
+#adsplacer_pro_licence_form div input[type='text'] {width: 150px;margin: 0 0 0 10px;line-height: 17px;padding: 5px;}
+.wpadsplacertab.active {display: block;}
+.wpadsplacertab {display: none;}
+.nav-tab {padding: 4px 8px;margin-left: 5px;font-size: 13px;}
+.promo_plugin {}
+.promo_plugin a {text-align: center;width: 100px;display: inline-block;vertical-align: top;margin: 10px 0;}
+.promo_plugin img {display: block;margin: 0 auto 10px;width: 80px; height: auto;padding: 5px;}
+.promo_plugin a.socialer img {background: #D84800;}
+.promo_plugin a.elt img {background: #344A8A;}
+.promo_plugin a.videtiser img {background: #6AB1FB;}
+p.mbwarning {
+    font-size: 18px;
+    line-height: 20px;
+    border: 2px solid #f00;
+    padding: 5px;
+}
+
+.ab-testing-table .tac, .ab-testing-table .tac{
+    text-align: center;
+}
+.ab-testing-table .highest {
+    background-color: #acff9f;
+}
+.ab-testing-table .highest td {
+    font-weight: 700;
+}
+
+@media ( max-width: 500px ) {
+    .ab-testing-table .mob-hidden, .ab-testing-table .mob-hidden{
+        display: none;
+    }
+}
+#showStatistic .ab-testing-table td, #showStatistic .ab-testing-table th {width: 17%;vertical-align: middle;}
+#showStatistic .ab-testing-table td:first-child, #showStatistic .ab-testing-table th:first-child {width: 32%;}
